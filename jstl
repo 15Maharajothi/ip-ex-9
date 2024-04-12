@@ -1,0 +1,26 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>JSTL Example</title>
+</head>
+<body>
+    <h1>Simple JSTL Example</h1>
+    
+    <%-- Define a list --%>
+    <c:set var="numbers" value="[1, 2, 3, 4, 5]" />
+    
+    <%-- Iterate over the list and print each element --%>
+    <c:forEach var="number" items="${numbers}">
+        Number: ${number}<br/>
+    </c:forEach>
+    
+    <%-- Conditional rendering based on list size --%>
+    <c:if test="${empty numbers}">
+        The list is empty.
+    </c:if>
+    <c:if test="${not empty numbers}">
+        The list is not empty.
+    </c:if>
+</body>
+</html>
